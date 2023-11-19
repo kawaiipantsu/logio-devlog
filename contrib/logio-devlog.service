@@ -1,9 +1,18 @@
 [Unit]
+Description=THGUSred LogIO Devlog
 Wants=network-online.target
 After=network-online.target
 
 [Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
 ExecStart=/usr/local/bin/log.io-server
 
 [Install]
 WantedBy=multi-user.target
+
+# systemctl daemon-reload
+# systemctl enable logio-devlog.service
+# systemctl start logio-devlog.service
